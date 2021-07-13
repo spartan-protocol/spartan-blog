@@ -1,4 +1,8 @@
 {
+  "development": {
+    "apiUrl": "https://spartan-protocol-ghost.herokuapp.com",
+    "contentApiKey": "a540fb80ec18a89a7cf3243d4e"
+  },
   "production": {
     "apiUrl": "https://spartan-protocol-ghost.herokuapp.com",
     "contentApiKey": "a540fb80ec18a89a7cf3243d4e"
