@@ -1,10 +1,6 @@
 {
-  "development": {
-    "apiUrl": "https://gatsby.ghost.io",
-    "contentApiKey": "9cc5c67c358edfdd81455149d0"
-  },
   "production": {
-    "apiUrl": "https://gatsby.ghost.io",
-    "contentApiKey": "9cc5c67c358edfdd81455149d0"
+    "apiUrl": "https://spartan-protocol-ghost.herokuapp.com",
+    "contentApiKey": "a540fb80ec18a89a7cf3243d4e"
   }
 }
