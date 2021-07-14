@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { Helmet } from "react-helmet";
 import { Link, StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
+import { Tags } from "@tryghost/helpers-gatsby";
 
 import { Navigation } from ".";
 import config from "../../utils/siteConfig";
@@ -18,7 +19,7 @@ import "../../styles/app.css";
  * styles, and meta data for each page.
  *
  */
-const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
+const DefaultLayout = ({ data, children, bodyClass, isHome, post, tag }) => {
     const site = data.allGhostSettings.edges[0].node;
     const twitterUrl = site.twitter
         ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}`
@@ -132,6 +133,37 @@ const DefaultLayout = ({ data, children, bodyClass, isHome }) => {
                                     </div>
                                 </div>
                             ) : null}
+                            {post ? (
+                                <div className="site-banner-container">
+                                    <div className="site-banner">
+                                        <h1 className="site-banner-title-sm wordwrap">
+                                            {post.title}
+                                        </h1>
+                                        <div className="post-card-tags">
+                                            <Tags
+                                                post={post}
+                                                visibility="public"
+                                                autolink={true}
+                                                permalink="/tag/:slug"
+                                            />
+                                        </div>
+                                    </div>
+                                </div>
+                            ) : null}
+                            {tag ? (
+                                <div className="site-banner-container">
+                                    <div className="site-banner">
+                                        <h1 className="site-banner-title-sm wordwrap">
+                                            {tag.name}
+                                        </h1>
+                                        {tag.description ? (
+                                            <p className="site-banner-desc">
+                                                {tag.description}
+                                            </p>
+                                        ) : null}
+                                    </div>
+                                </div>
+                            ) : null}
                         </div>
                     </header>
 
@@ -175,6 +207,8 @@ DefaultLayout.propTypes = {
     children: PropTypes.node.isRequired,
     bodyClass: PropTypes.string,
     isHome: PropTypes.bool,
+    post: PropTypes.object,
+    tag: PropTypes.object,
     data: PropTypes.shape({
         file: PropTypes.object,
         allGhostSettings: PropTypes.object.isRequired,

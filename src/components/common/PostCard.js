@@ -24,7 +24,7 @@ const PostCard = ({ post }) => {
             <section className="post-card-excerpt">
                 {postedDate.toLocaleDateString("en-US")}
                 <h2 className="post-card-title">{post.title}</h2>
-                {post.excerpt}
+                <div className="post-card-actual-excerpt">{post.excerpt}</div>
             </section>
             <footer className="post-card-footer">
                 <div className="post-card-footer-left">
