@@ -1,10 +1,10 @@
 {
   "development": {
-    "apiUrl": "https://spartan-protocol-ghost.herokuapp.com",
-    "contentApiKey": "a540fb80ec18a89a7cf3243d4e"
+    "apiUrl": "https://articles.spartanprotocol.org",
+    "contentApiKey": "dafa42123937035390ef40a73f"
   },
   "production": {
-    "apiUrl": "https://spartan-protocol-ghost.herokuapp.com",
-    "contentApiKey": "a540fb80ec18a89a7cf3243d4e"
+    "apiUrl": "https://articles.spartanprotocol.org",
+    "contentApiKey": "dafa42123937035390ef40a73f"
   }
 }
