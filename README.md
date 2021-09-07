@@ -1,50 +1,34 @@
-# Gatsby Starter Ghost
+# Spartan Protocol Blog front-end (themeing repo)
 
+Live on: https://blog.spartanprotocol.org/
+
+![image](https://user-images.githubusercontent.com/26967164/132273854-6ff90c97-d89e-4e84-a035-16053e3a04be.png)
+
+This repo houses the theming files for the Spartan Protocol blog. Built off the Gatsby Starter Ghost package.
 A starter template to build lightning fast websites with [Ghost](https://ghost.org) & [Gatsby](https://gatsbyjs.org)
 
-**Demo:** https://gatsby.ghost.org
+This does not hold the actual article/media content; only the structure. The articles are fed in thru a public feed/API so anyone is welcome to hook into that community Ghost feed and provide their own versions of this blog for redundancy or their own personal flair. Otherwise as always we welcome community contrinution to help improve this repo.
+
+Reach out in the Telegram to get involved and/or make a PR of any changes to this repo.
 
 &nbsp;
 
-![gatsby-starter-ghost](https://user-images.githubusercontent.com/120485/50913567-8ab8e380-142c-11e9-9e78-de02ded12fc6.jpg)
+# Install & Run
 
-&nbsp;
+Pull this repo to your GitHub Desktop (or CLI) local install.
+Open the project in Visual Studio (or your preferred editor)
+Run 'yarn' in the console to install all deps.
+Run 'gatsby develop' in the console to spin up as local version of the front end to visually see and test any changes as you code.
 
+You now have a Gatsby site pulling content from headless Ghost. Feel free to play around with the theme files and make a PR to help shape the Spartan protocol blog.
 
-# Installing
+# That's it! Info below is not really relevant to most contributors
 
-```bash
-# With Gatsby CLI
-gatsby new gatsby-starter-ghost https://github.com/TryGhost/gatsby-starter-ghost.git
-```
-
-```bash
-# From Source
-git clone https://github.com/TryGhost/gatsby-starter-ghost.git
-cd gatsby-starter-ghost
-```
-
-Then install dependencies
-
-```bash
-yarn
-```
-
-&nbsp;
-
-# Running
-
-Start the development server. You now have a Gatsby site pulling content from headless Ghost.
-
-```bash
-gatsby develop
-```
-
-By default, the starter will populate content from a default Ghost install located at https://gatsby.ghost.io.
+# GHOST SPECIFIC INFO BELOW:
 
 To use your own install, you will need to edit the `.ghost.json` config file with your credentials. Change the `apiUrl` value to the URL of your Ghost site. For Ghost(Pro) customers, this is the Ghost URL ending in `.ghost.io`, and for people using the self-hosted version of Ghost, it's the same URL used to access your site.
 
-Next, update the `contentApiKey` value to a key associated with the Ghost site. A key can be provided by creating an integration within Ghost Admin. Navigate to Integrations and click "Add new integration". Name the integration appropriately and click create.
+Next, update the `contentApiKey` value to a key associated with the Ghost site (or leave as is to pull the SP articles). A key can be provided by creating an integration within Ghost Admin. Navigate to Integrations and click "Add new integration". Name the integration appropriately and click create.
 
 Finally, configure your desired URL in `siteConfig.js`, so links (e. g. canonical links) are generated correctly. You can also update other default values, such as `postsPerPage` in this file.
 
