@@ -348,6 +348,7 @@ svg,
 video {
     vertical-align: middle;
     width: auto;
+    height: auto;
 }
 
 fieldset {
@@ -1109,7 +1110,7 @@ h6 {
     min-height: 148px;
     color: var(--color-base);
     font-family: var(--font-sans-serif);
-    background-color: #FFF;
+    background-color: #fff;
     text-decoration: none;
     border-radius: 3px;
     box-shadow: 0 2px 5px -1px rgba(0, 0, 0, 0.15), 0 0 1px rgba(0, 0, 0, 0.09);
