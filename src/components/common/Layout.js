@@ -1,15 +1,15 @@
-import React from "react";
-import PropTypes from "prop-types";
-import { Helmet } from "react-helmet";
-import { Link, StaticQuery, graphql } from "gatsby";
-import Img from "gatsby-image";
-import { Tags } from "@tryghost/helpers-gatsby";
+import React from "react"
+import PropTypes from "prop-types"
+import { Helmet } from "react-helmet"
+import { Link, StaticQuery, graphql } from "gatsby"
+import Img from "gatsby-image"
+import { Tags } from "@tryghost/helpers-gatsby"
 
-import { Navigation } from ".";
-import config from "../../utils/siteConfig";
+import { Navigation } from "."
+import config from "../../utils/siteConfig"
 
 // Styles
-import "../../styles/app.css";
+import "../../styles/app.css"
 
 /**
  * Main layout component
@@ -20,13 +20,13 @@ import "../../styles/app.css";
  *
  */
 const DefaultLayout = ({ data, children, bodyClass, isHome, post, tag }) => {
-    const site = data.allGhostSettings.edges[0].node;
+    const site = data.allGhostSettings.edges[0].node
     const twitterUrl = site.twitter
         ? `https://twitter.com/${site.twitter.replace(/^@/, ``)}`
-        : null;
+        : null
     const facebookUrl = site.facebook
         ? `https://www.facebook.com/${site.facebook.replace(/^\//, ``)}`
-        : null;
+        : null
 
     return (
         <>
@@ -178,15 +178,8 @@ const DefaultLayout = ({ data, children, bodyClass, isHome, post, tag }) => {
                     <footer className="site-foot">
                         <div className="site-foot-nav container">
                             <div className="site-foot-nav-left">
-                                <Link to="/">{site.title}</Link> © 2021 &mdash;
-                                Published with{" "}
-                                <a
-                                    className="site-foot-nav-item"
-                                    href="https://ghost.org"
-                                    target="_blank"
-                                    rel="noopener noreferrer"
-                                >
-                                    Ghost
+                                <a href="https://www.netlify.com">
+                                    <img src="https://www.netlify.com/img/global/badges/netlify-color-accent.svg" alt="Deploys by Netlify" />
                                 </a>
                             </div>
                             <div className="site-foot-nav-right">
@@ -200,8 +193,8 @@ const DefaultLayout = ({ data, children, bodyClass, isHome, post, tag }) => {
                 </div>
             </div>
         </>
-    );
-};
+    )
+}
 
 DefaultLayout.propTypes = {
     children: PropTypes.node.isRequired,
@@ -213,9 +206,9 @@ DefaultLayout.propTypes = {
         file: PropTypes.object,
         allGhostSettings: PropTypes.object.isRequired,
     }).isRequired,
-};
+}
 
-const DefaultLayoutSettingsQuery = (props) => (
+const DefaultLayoutSettingsQuery = props => (
     <StaticQuery
         query={graphql`
             query GhostSettings {
@@ -235,8 +228,8 @@ const DefaultLayoutSettingsQuery = (props) => (
                 }
             }
         `}
-        render={(data) => <DefaultLayout data={data} {...props} />}
+        render={data => <DefaultLayout data={data} {...props} />}
     />
-);
+)
 
-export default DefaultLayoutSettingsQuery;
+export default DefaultLayoutSettingsQuery
